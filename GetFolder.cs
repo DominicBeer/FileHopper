@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Grasshopper.Kernel;
 using Grasshopper.Kernel.Special;
 using Grasshopper.Kernel.Types;
+using Grasshopper.Kernel.Parameters;
 using Rhino.Geometry;
 using System.IO;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace FileHopper
         
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddTextParameter("Path", "P", "Windows directory to search within", GH_ParamAccess.item);
+            pManager.AddParameter(new Param_FilePath(),"Path", "P", "Windows directory to search within", GH_ParamAccess.item);
             pManager.AddTextParameter("Folder[]", "F[]", "Pattern to match folders against", GH_ParamAccess.item);
         }
         private readonly int pathParamIndex = 0;

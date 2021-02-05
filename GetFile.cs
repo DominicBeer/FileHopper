@@ -27,7 +27,7 @@ namespace FileHopper
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddTextParameter("Path", "P", "Windows directory to search within", GH_ParamAccess.item);
+            pManager.AddParameter(new Param_FilePath(),"Path", "P", "Windows directory to search within", GH_ParamAccess.item);
             pManager.AddTextParameter("File[]", "F[]", "Pattern to match files against", GH_ParamAccess.item);
         }
         private readonly int pathParamIndex = 0;
